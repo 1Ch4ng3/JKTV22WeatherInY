@@ -5,6 +5,8 @@
  */
 package jktv22weatheriny;
 
+
+import tasks.InitProject;
 import java.util.Scanner;
 
 /**
@@ -27,6 +29,8 @@ public class App {
     void run() {
        System.out.println("-----WEATHER IN YEAR----");
        boolean repeat = true;
+       InitProject initProject = new InitProject();
+       initProject.init();
         do {
             System.out.println("Выберите номер задачи: ");
             System.out.println("0. Выход из программы");
@@ -42,8 +46,7 @@ public class App {
                     repeat = false;
                     break;
                 case 1:
-                    WeatherInDate weatherInDate = new WeatherInDate(scanner);
-                    weatherInDate.showWeather();
+
                     break;
                 case 2:
                          
@@ -56,7 +59,8 @@ public class App {
                     break;
                 default:
                     System.out.println("Выбирете номер из списка");
+            }
         }while(repeat);
     }
-    }
 }
+
